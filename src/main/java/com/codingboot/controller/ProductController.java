@@ -1,8 +1,6 @@
 package com.codingboot.controller;
 
 import java.util.List;
-
-import org.apache.catalina.connector.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -78,9 +76,7 @@ public class ProductController {
 
 	@GetMapping("/filter")
 	public ResponseEntity<List<Product>> getProductPagination(@RequestParam String name) {
-
 		return ResponseEntity.ok(productRepository.findByName(name));
-
 	}
 
 }
